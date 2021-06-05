@@ -1,0 +1,27 @@
+.page-top{
+    width:100%;
+    height:40px;
+    background-color:#db4c3f;
+}
+.page-content{
+    width:50%;
+    margin:0px auto;
+}
+.page-contenth2{
+    line-height:40px;
+    font-size:18px;
+    color:#fff;
+    text-align:center;
+}
+.main{
+    width:100%;
+    margin:2% 15%;
+    box-sizing:border-box;
+}
+table{
+    border:1px solid #403e3e36;
+    width:70%;
+    line-height:35px;
+    text-align:center;
+    font-size:18px;
+}

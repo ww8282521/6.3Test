@@ -1,0 +1,90 @@
+
+body {
+  /*background-image:linear-gradient(rgba(236 159 159 / 71%),rgba(158 161 254 / 71%)),url(../img/img2.png) !important;*/
+    (rgb(236 159 159 / 71%),rgb(158 161 254 / 71%))
+    background-size: cover;
+  
+    
+}
+#carbonads a{color:#fff;text-decoration:none}#carbonads a:hover{color:#fff}
+            
+             
+
+/**  
+ * DaisyJS Demo Styles
+ * by Waren Gonzaga
+ */
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  /*overflow: hidden;*/
+}
+
+body {
+ 
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+}
+
+#momoland {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.wrapper {
+    position: absolute;
+    left: 0;
+    top: 15%;
+    padding: 0 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.wrapper > img {
+    width: 200px;
+    height: auto;
+}
+
+h1 {
+    color: #fff;
+    font-size: 100px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    margin-bottom: -10px;
+    letter-spacing: 2px;
+}
+
+            p{
+                width: 39%;
+                margin: 0 auto;
+                line-height: 24px;
+            }
+            .btn{
+                padding: 15px 40px;
+                background: transparent;
+                color: white;
+                font-size: 19px;
+                cursor: pointer;
+                border-radius: 50px;
+                outline: none;
+                border: 2px solid white;
+                font-family: 'Poppins', sans-serif;
+                transition: all 0.5s ease-in-out;
+            }
+ 
+            
+            .btn:hover{
+                background: white;
+                color: black;
+            }
+            
