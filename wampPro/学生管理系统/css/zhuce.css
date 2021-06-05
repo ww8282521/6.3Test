@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding:0;
+}
+a{
+    text-decoration: none;
+    color: orangered;
+}
+.orange{
+    background-color: orangered;
+    margin-right:10px ;
+}
+.content{
+    width: 100%;
+    height: 100%;
+}
+.header{
+    width: 100%;
+    height: 80px;
+}
+.logo{
+
+    margin-top: 30px ;
+    margin-left: 200px;
+
+}
+.banner{
+    width: 100%;
+    height: 600px;
+    background: url("../img/beijing01.jpg") no-repeat top center;
+    position: relative;
+}
+
+.form{
+    padding:10px;
+    margin: 10px 80px 50px 50px;
+    height: 545px;
+    width: 380px;
+    box-shadow: 0 0 15px 3px  rgba(51, 51, 51, 0.53);
+    float: right;
+    text-align: center;
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+}
+
+input{
+    width: 300px;
+    height: 30px;
+    border:1px solid #e0e0e0;
+    padding: 8px;
+    outline: none;
+}
+.login{
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.login span{
+    color:#333;
+    padding:15px;
+}
+.active{
+    color: orangered;
+}
+.active:visited{
+    color: #333;
+    text-decoration:none;
+}
+
+.aclass{
+    color: orangered;
+}
+.aclass:visited{
+    color: #333;
+    text-decoration:none;
+}
+
+
+
+.user{
+    margin-bottom: 15px;
+}
+.password{
+    margin-bottom: 15px;
+}
+.submit input{
+    width: 318px;
+    height: 50px;
+    background-color: orangered;
+    color:white;
+    font-size:18px;
+    margin-bottom: 20px;
+}
+.register{
+    margin-bottom: 80px;
+}
+.footer{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footer .else{
+    position: relative;
+    margin-bottom: 15px;
+}
+.else .left,.right{
+    position: absolute;
+    display: block;
+    width:100px;
+    height:1px;
+    background:#999;
+    top:50%
+}
+.right{
+    right: 0;
+}
+.othercon{
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.othercon span{
+    display: inline-block;
+    position:absolute;
+    margin:auto;
+    width:18px;
+    height:18px;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+    background:url("../img/icons_type.png") no-repeat ;
+}
+.othercon a{
+    position: relative;
+    display: inline-block;
+    width:30px;
+    height:30px;
+    background:#333;
+    border-radius: 50%;
+    margin: 0px 15px;
+}
+.othercon .qq{
+    background-position: -20px 0;
+
+}
+.othercon .sina{
+    background-position: -38px 0;
+}
+.othercon .alipay{
+    background-position: -56px 0;
+    width: 24px;
+
+}
+.othercon .wechat{
+    background-position: -84px 0;
+    width: 24px;
+}
+.bottom{
+    width: 800px;
+    height: 150px;
+    background-color: white;
+    position: relative;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bottom p{
+    padding-top:30px;
+    text-align: center;
+    color: gray;
+}
+.bottom ul{
+    padding-left: 200px;
+    position: absolute;
+}
+.bottom li{
+    float: left;
+    list-style: none;
+    margin-left: 30px;
+    font-size: 14px;
+}
+.bob{
+	text-align: center;
+}
+.wenzi{
+	text-align: center;
+}

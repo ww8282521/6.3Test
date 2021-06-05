@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>教务管理系统</title>
+</head>
+
+<script>
+    "use strict";
+    function check() {
+        var user = document.querySelector("#username").value;
+        var pass = document.querySelector("#password").value;
+        var check = document.querySelector("#check").value;
+        if (user !== "" && pass !== "" && check !== "" && user.length >= 6 && user.length < 13) {
+            if(user.indexOf("#")>=0){
+                alert("含有非法字符,重新输入");
+                history.go(0);
+            }else{
+                if(escape(user).indexOf('%u')==-1){
+                    if(pass.length>=6&&pass.length<13){
+                        if(user.indexOf("#")>=0){
+                            alert("含有非法字符,重新输入");
+                            history.go(0);
+                        }else{
+                            if(escape(pass).indexOf('%u')==-1){
+                                if(check.length!=4){
+                                    alert("验证码输入错误");
+                                }else{
+                                    document.querySelector(".form").submit();
+                                }
+                            }else{
+                                alert("有中文");
+                            }
+                        }
+                    }else{
+                        alert("密码输入错误");
+                        history.go(0);
+                    }
+                }else{
+                    alert('有中文');
+                    history.go(0);
+                }
+            }
+        }else{
+            alert("账号输入错误请重新输入");
+            history.go(0);
+        }
+    }
+</script>
+<body>
+<div class="content">
+    <div class="header">
+        <div class="logo">
+            <img src="../img/logo.jpg" alt="logo" class="orange">
+            <a href="index.html"><img src="../img/bj.jpg" alt="slogan"></a>
+        </div>
+    </div>
+    <div class="banner">
+
+        <div class="form">
+            <form action="../admin/denglu.php" method="post">
+                <p class="login">
+                    <span><a href="#" class="active">教务管理系统</a> </span>
+<!--                    <span style="color:#e0e0e0">|</span>-->
+<!--                    <span class="aclass"><a href="erweima.html">学生登录</a> </span>-->
+                </p>
+                <p class="user">
+                    <input type="text" id="username" name="user" placeholder="账号"/>
+                </p>
+                <p class="pass">
+                    <input type="password" id="password" name="pass" placeholder="密码"/>
+                </p>
+                <p class="check">
+                    <input type="check" id="check" name="check" placeholder="验证码"/>
+                    <!--                    <img src="../admin/check.php" id="img1"/>-->
+                    <!--            <a href="#" onclick="document.querySelector('#img1').src='../admin/check.php?'+Math.random()">看不清，点我换一张</a>-->
+                    <img src="../admin/check.php" alt="" id="img1"
+                         onclick="document.querySelector('#img1').src='../admin/check.php?'+Math.random()">
+                </p>
+                <p class="submit">
+                    <input type="submit" value="登录" onclick="change()"/>
+                </p>
+            </form>
+            <p class="register">
+                <span><a href="zhuce.html" onclick="">注册账号</a> </span>
+                <span>|</span>
+                <span><a href="forget.html">忘记密码?</a> </span>
+            </p>
+            <div class="footer">
+                <p class="else">
+                    <span class="left"></span>
+                    其他方式登录
+                    <span class="right"></span>
+                </p>
+                <div class="othercon">
+                    <a href="#"><span class="qq"></span></a>
+                    <a href="#"><span class="sina"></span></a>
+                    <a href="#"><span class="alipay"></span></a>
+                    <a href="#"><span class="wechat"></span></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="bottom">
+    <ul>
+        <li class="li">
+            <a href="#" style="color: black;">简体</a>
+        </li>
+        <li>|</li>
+        <li>
+            <a href="#">繁体</a>
+        </li>
+        <li>|</li>
+        <li>
+            <a href="#">英语</a>
+        </li>
+        <li>|</li>
+        <li>
+            <a href="#">常见问题</a>
+        </li>
+    </ul>
+
+    <div class="bob">
+        <p><h6>山西旅游职业学院</h6></p>
+    </div>
+</div>
+</body>
+
+</html>

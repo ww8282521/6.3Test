@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<script>
+    "use strict";
+
+    function change() {
+        //document.querySelector().value获取输入值
+        var user = document.querySelector("#username").value;
+        var pass = document.querySelector("#password").value;
+
+        //escape对字符集进行编码，如果ASCII码大于255，以%u存储，中文正好大于255
+        if (document.querySelector("#username").value.length >= 6
+            && document.querySelector("#username").value.length < 13
+            && document.querySelector("#username").value.indexOf("@") < 0
+            && escape(user).indexOf('%u') == -1) {
+
+            if (document.querySelector("#password").value.length >= 6
+                && document.querySelector("#password").value.length < 13) {
+
+                document.querySelector("form").submit();
+
+            } else {
+                alert("密码不对");
+                //刷新当前页面
+                history.go(0);
+            }
+        } else {
+            alert("账号不对");
+            //刷新当前页面
+            history.go(0);
+        }
+    }
+</script>
+<body>
+<form action="php/sign.php" method="post">
+    <label for="username">账号：</label>
+    <input type="text" id="username" name="user" placeholder="请输入账号">
+    <label for="password">密码：</label>
+    <input type="text" id="password" name="pass" placeholder="请输入密码">
+    <input type="button" value="注册" onclick="change()">
+</form>
+</body>
+</html>

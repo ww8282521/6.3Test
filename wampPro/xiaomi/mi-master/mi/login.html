@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页</title>
+</head>
+<style>
+    #img1{
+        position: absolute;
+        top:5px;
+    }
+</style>
+<body>
+<form action="php/login.php" method="post" class="myform">
+    <input type="text" placeholder="请输入账号" class="user" name="user">
+    <input type="password" placeholder="请输入密码" class="pass" name="pass">
+    <input type="text" class="yzm" placeholder="请输入验证码" name="yzm">
+    <img src="php/yzm.php" alt="" id=img1 onclick="document.querySelector('#img1').src='php/yzm.php?'+Math.random()">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="button" value="登录" onclick="check()">
+    <input type="button" value="注册" onclick="window.location.href='sign.html'">
+    <a href="forget.html">忘记密码？</a>
+</form>
+</body>
+</html>
+<script>
+    "use strict";
+    function check() {
+        var user = document.querySelector(".user").value;
+        var pass = document.querySelector(".pass").value;
+        var yzm = document.querySelector(".yzm").value;
+        if (user !== "" && pass !== "" && yzm !== "" && user.length >= 6 && user.length < 13) {
+            if(user.indexOf("#")>=0){
+                alert("含有非法字符,重新输入");
+                history.go(0);
+            }else{
+                if(escape(user).indexOf('%u')==-1){
+                    if(pass.length>=6&&pass.length<13){
+                        if(user.indexOf("#")>=0){
+                            alert("含有非法字符,重新输入");
+                            history.go(0);
+                        }else{
+                            if(escape(pass).indexOf('%u')==-1){
+                                if(yzm.length!=6){
+                                    alert("验证码输入错误");
+                                }else{
+                                    document.querySelector(".myform").submit();
+                                }
+                            }else{
+                                alert("有中文");
+                            }
+                        }
+                    }else{
+                        alert("密码输入错误");
+                        history.go(0);
+                    }
+                }else{
+                    alert('有中文');
+                    history.go(0);
+                }
+            }
+        }else{
+            alert("账号输入错误请重新输入");
+            history.go(0);
+        }
+    }
+</script>

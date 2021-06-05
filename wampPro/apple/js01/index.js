@@ -1,0 +1,89 @@
+$(".bag").click(function(e){
+    e.stopPropagation();
+    $(".bag-inner").toggleClass("active")
+})
+$("body").click(function(){
+    $(".bag-inner").removeClass("active")
+})
+$(".bag-inner").click(function(e){
+    e.stopPropagation()
+})
+$(".bag-inner").mouseover(function(e){
+    e.stopPropagation()
+})
+$(".big").click(function(){
+    $(".item:not(.item:first-child)").each(function(index){
+        $(this).transition({scale:0.5,opacity:0},index*200)
+    })
+    $(".search").show().transition({x:0},1000)
+    $(".in").focus()
+    $(".quick").show().transition({opacity:1},1000)
+    $(".fy").each(function(index){
+        $(this).transition({x:0},index*200);
+    })
+})
+$(".def").click(function(){
+    $(".search").css({display:"none"}).transition({x:60})
+    $(".item:not(.item:first-child)").each(function(index){
+        $(this).transition({scale:1,opacity:1},index*200)
+    })
+    $(".quick").hide()
+    $(".fy").transition({x:60})
+})
+var flag=true;
+$(".imp").click(function(){
+    if(flag==true){
+        flag=false;
+    $(".large").show().transition({rotateX:"0deg",opacity:1},3000)
+    $(".banner").css({display:"none"})
+    $(".list").css({display:"none"})
+    $(".foot").css({display:"none"})
+    $(".rot").transition({rotate:270},function(){
+        $(".imp").addClass("icon").html("&#xe609;");
+    })
+    $(".buy").css({color:"#000"})
+    $(".apple").html("&#xe60c;")
+    }else if(flag==false){
+        flag=true;
+        $(".large").hide().css({rotateX:"90",opacity:"0"},2000)
+        $(".buy").css({color:"#fff"})
+        $(".imp").removeClass("icon").html("<span class='rot'></span><span class='rot'></span>")
+        $(".apple").html("&#xe60c;")
+        $(".banner").css({display:"block"})
+        $(".list").css({display:"block"})
+        $(".foot").css({display:"block"})
+    }
+})
+$(".apple").click(function(){
+    if($(this).hasClass("ji")){
+        $(".dess").slideDown()
+        $(".las").css({display:"none"})
+        $(this).html("&#xe60c;").removeClass("ji")
+    }else{
+        $(".banner").css({display:"block"})
+        $(".list").css({display:"block"})
+        $(".foot").css({display:"block"})
+        $(".large").css({display:"none"})
+        $(".buy").css({color:"#fff"})
+        $(".imp").removeClass("icon").html("<span class='rot'></span><span class='rot'></span>")
+    }
+})
+$(".spe").click(function(){
+    $(".dess").slideUp()
+    $(".las").css({display:"block"})
+    $(".apple").html("&#xe60e;").addClass("ji")
+})
+$(".feet").each(function(index){
+    var i=index;
+    $(this).click(function(){
+        if(flag==true){
+            flag=false;
+            $(".ent"+(index+1)).slideDown()
+ 			$(".add").eq(i).transition({rotate:"45deg",opacity:1},10)
+        }else if(flag==false){
+            flag=true;
+            $(".ent"+(index+1)).slideUp()
+ 			$(".add").eq(i).transition({rotate:"0",opacity:1},10)
+        }
+    })
+})
